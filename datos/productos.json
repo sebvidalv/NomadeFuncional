@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "Plan Básico",
+    "descripcion": "Acceso libre al gimnasio",
+    "precio": 20000,
+    "imagen": "img/plan-basico.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Plan Premium",
+    "descripcion": "Incluye clases dirigidas",
+    "precio": 30000,
+    "imagen": "img/plan-premium.png"
+  }
+]
