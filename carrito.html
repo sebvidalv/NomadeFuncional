@@ -1,31 +1,38 @@
-<!-- carrito.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito - Nómade Funcional</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/carrito.js"></script>
 </head>
 <body>
   <header>
-    <h1>Carrito</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="planes.html">Planes</a>
+    <nav class="navbar">
+      <img src="img/logo.jpg" alt="Logo" class="logo-navbar" />
+      <ul class="nav-links">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="#planes">PLANES</a></li>
+        <li><a href="carrito.html">CARRITO</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="carrito-container"></section>
-    <button id="pagar-btn">Pagar</button>
-    <section id="carrito-container"></section>
-    <h3>Total: $<span id="total">0</span></h3>
-    <a href="checkout/webpay.php" id="pagar-btn" class="btn">Pagar</a>
-<script src="js/carrito.js"></script>
-
+  <main class="carrito">
+    <h2>Tu Carrito</h2>
+    <div id="carrito-contenido"></div>
+    <div class="carrito-resumen">
+      <p>Total: <span id="carrito-total">$0</span></p>
+      <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
   </main>
 
-  <script src="js/carrito.js"></script>
+  <footer>
+    <div class="social">
+      <a href="#"><img src="img/icono-instagram.svg" alt="Instagram" class="ig-icon" /></a>
+    </div>
+    <p>&copy; 2025 Nómade Funcional</p>
+  </footer>
 </body>
 </html>

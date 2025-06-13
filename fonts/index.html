@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +45,7 @@
             <li>Acceso limitado</li>
             <li>1 clase semanal</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Básico', 19990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarAlCarrito('Plan Básico', 19990)">Agregar al carrito</button>
         </div>
         <div class="card">
           <h4>Plan Intermedio</h4>
@@ -53,7 +54,7 @@
             <li>Acceso completo</li>
             <li>3 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Intermedio', 29990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarAlCarrito('Plan Intermedio', 29990)">Agregar al carrito</button>
         </div>
         <div class="card">
           <h4>Plan Avanzado</h4>
@@ -62,7 +63,7 @@
             <li>Acceso total</li>
             <li>Clases ilimitadas</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Avanzado', 49990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarAlCarrito('Plan Avanzado', 49990)">Agregar al carrito</button>
         </div>
       </div>
     </section>
@@ -80,24 +81,20 @@
 
   <footer>
     <div class="social">
-      <a href="https://www.instagram.com/nomade_funcional/"><img src="img/ig.avif" alt="Instagram" class="ig-icon" /></a>
+      <a href="#"><img src="img/icono-youtube.svg" alt="YouTube" /></a>
+      <a href="#"><img src="img/icono-instagram.svg" alt="Instagram" class="ig-icon" /></a>
     </div>
     <p>&copy; 2025 Nómade Funcional</p>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DEL CARRITO -->
-  <div id="carrito-btn-flotante">🛒 <span id="contador-carrito">0</span></div>
-
-  <!-- PANEL DEL CARRITO -->
-    <div id="carrito-panel">
-      <h2>TU CARRITO</h2>
-      <ul id="lista-carrito">
-        <!-- Elementos agregados dinámicamente -->
-      </ul>
-      <div class="carrito-total">TOTAL: $<span id="total-carrito">0</span></div>
-      <button onclick="finalizarCompra()">FINALIZAR COMPRA</button>
-      <button class="cerrar" onclick="toggleCarrito()">CERRAR</button>
-    </div>
+  <div id="carrito-btn">🛒<span id="contador-carrito">0</span></div>
+  <div id="carrito-panel" class="oculto">
+    <h2>Tu Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-total">Total: <span id="total-carrito">$0</span></div>
+    <button id="finalizar-compra">Finalizar compra</button>
+    <button id="cerrar-carrito">Cerrar</button>
+  </div>
 
   <script src="js/carrito.js"></script>
 </body>
