@@ -1,3 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #111;
+  color: #ff0;
+  font-family: 'Capture It', sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+/* =============================
+   HEADER & NAVIGATION
+   ============================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #000;
+  flex-wrap: wrap;
+}
+
+.logo-navbar {
+  height: 80px;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  color: #ffff00;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  font-family: 'Capture It', sans-serif;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+/* =============================
+   TEXT STYLES
+   ============================= */
+
+h2 {
+  font-family: 'Capture It', sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: Arial, sans-serif;
+}
+
 /* =============================
    RESPONSIVE DESIGN
    ============================= */
@@ -53,69 +126,4 @@
     font-size: 14px;
     text-align: center;
   }
-}
-
-
-
-
-
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-body {
-  background-color: #111;
-  color: #ff0; /* amarillo */
-  font-family: 'Capture It', sans-serif;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-
-h2{
-  font-family: 'Capture It', sans-serif;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-
-.nav-links li a {
-  font-family: 'Capture It', sans-serif;
-  font-weight: normal;
-  font-size: 16px; /* Ajusta según necesidad */
-  color: #ffff00; /* Amarillo fuerte */
-  text-decoration: none;
-  margin: 0 20px;
-  letter-spacing: 1px;
-}
-
-.nav-links li a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 5px #ffff00;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background-color: #000;
-}
-
-.logo-navbar {
-  height: 60px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #ff0;
-  font-weight: bold;
-  font-size: 14px;
 }
