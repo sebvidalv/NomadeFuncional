@@ -1,54 +1,27 @@
-/* === CARGA GLOBAL DE FUENTE Y APLICACIÓN UNIVERSAL === */
+/* === FUENTE GLOBAL === */
 *, *::before, *::after {
-  font-family: 'Capture It', sans-serif !important;
+  font-family: 'Capture It', sans-serif;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
-button,
-.btn,
-.nav-links a,
-.hero h1,
-.hero h2,
-.hero h3,
-.hero h4,
-.hero .btn,
-h2,
-.card h2 {
-  font-family: 'Capture It', sans-serif !important;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-
-h2,
-.section-title {
+h1, h2, h3, h4, .nav-links a, .btn, .card h2, .card h4 {
   font-weight: normal;
   text-transform: uppercase;
 }
 
-.card h4 {
-  font-family: 'Capture It', sans-serif !important;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-
-.navbar a {
-  font-weight: normal;
-  padding-right: 3.9rem; /* reducir un poco este valor */
-}
-
-
-/* === GENERAL === */
+/* === ESTILO GENERAL === */
 body {
   margin: 0;
   background-color: #000;
   color: #F9FA48;
   padding-top: 100px;
-  letter-spacing: 1px;
+  font-size: 16px;
 }
 
-header {
-  overflow: visible;
-  min-height: 80px;
+p {
+  text-align: center;
+  color: #ccc;
 }
 
 h1, h2, h3, h4 {
@@ -57,18 +30,12 @@ h1, h2, h3, h4 {
   letter-spacing: 1.5px;
 }
 
-p {
-  text-align: center;
-  color: #ccc;
-}
-
 /* === NAVBAR === */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 5px rgba(249, 250, 72, 0.1);
   display: flex;
@@ -85,8 +52,6 @@ p {
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -95,8 +60,8 @@ p {
 .nav-links a {
   text-decoration: none;
   color: #F9FA48;
-  font-weight: normal;
   transition: color 0.3s;
+  padding-right: 3rem;
 }
 
 .nav-links a:hover {
@@ -111,13 +76,19 @@ p {
 
 .btn {
   display: inline-block;
-  background-color: #F9FA48;
+  background: #F9FA48;
   color: #000;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
   text-decoration: none;
+  border-radius: 8px;
   font-weight: bold;
-  border-radius: 4px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #FFFF7D;
+  transform: scale(1.03);
 }
 
 /* === NOSOTROS === */
@@ -133,7 +104,7 @@ p {
   width: 100%;
 }
 
-/* === INFO / CARDS === */
+/* === PLANES / INFO === */
 .info {
   padding: 2rem;
 }
@@ -143,11 +114,10 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  padding: 1rem 0;
 }
 
 .card {
-  background-color: #111;
+  background: #111;
   border: 2px solid #F9FA48;
   border-radius: 10px;
   padding: 1.5rem;
@@ -169,12 +139,12 @@ p {
 }
 
 .tags li {
-  margin: 0.2rem 0;
+  margin: 0.3rem 0;
 }
 
 /* === COMENTARIOS === */
 .comentarios blockquote {
-  background-color: #111;
+  background: #111;
   color: #F9FA48;
   border-left: 4px solid #F9FA48;
   padding: 1rem;
@@ -185,7 +155,7 @@ p {
 /* === CONTACTO === */
 .contacto {
   padding: 2rem;
-  background-color: #111;
+  background: #111;
 }
 
 .contacto a {
@@ -197,7 +167,7 @@ p {
 footer {
   text-align: center;
   padding: 2rem;
-  background-color: #000;
+  background: #000;
   color: #F9FA48;
 }
 
@@ -205,80 +175,45 @@ footer .social {
   margin-bottom: 1rem;
 }
 
-footer .social img {
-  width: 40px;
+footer .social img,
+.ig-icon {
+  width: 30px;
   margin: 0 10px;
 }
 
-.ig-icon {
-  width: 30px;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #carrito-btn {
-    position: static;
-    align-self: flex-end;
-    margin-top: 1rem;
-  }
-
-  #carrito-btn-flotante {
-    top: 80px;
-    right: 20px;
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-}
-
-.btn-eliminar {
-  background: transparent;
-  border: none;
-  color: #F9FA48;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding-left: 10px;
-  transition: color 0.3s;
-}
-
-.btn-eliminar:hover {
-  color: #FFFF7D;
-}
-
-
 /* === CARRITO DE COMPRAS === */
-#carrito-btn {
+#carrito-btn,
+#carrito-btn-flotante {
   position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
-  background-color: #111;
+  background: #111;
   color: #F9FA48;
   border: 2px solid #F9FA48;
   border-radius: 50px;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  padding: 10px 15px;
+  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 0 10px #F9FA4888;
+  box-shadow: 0 0 10px #F9FA48;
   display: flex;
   align-items: center;
-  gap: 5px;
-  z-index: 1001;
+  gap: 8px;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+#carrito-btn {
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+#carrito-btn-flotante {
+  top: 120px;
+  right: 40px;
+}
+
+#carrito-btn-flotante:hover,
+#carrito-btn:hover {
+  background-color: #222;
 }
 
 #contador-carrito {
@@ -320,11 +255,11 @@ footer .social img {
 }
 
 #carrito-panel li {
-  border-bottom: 1px solid #444;
-  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Alinea verticalmente */
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
 }
 
 .carrito-total {
@@ -343,40 +278,77 @@ footer .social img {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 #carrito-panel button:hover {
   background: #FFFF7D;
 }
 
-#carrito-panel .cerrar {
-  margin-top: 1rem;
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  color: yellow;
 }
 
+/* === BOTÓN ELIMINAR === */
+.btn-eliminar {
+  font-size: 24px; /* Tamaño más grande */
+  line-height: 1;
+  background: none !important;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.icono-basura {
+  width: 28px; /* Agrandado */
+  height: 28px;
+  filter: brightness(0) invert(1); /* Blanco sobre negro */
+  transition: transform 0.2s ease;
+}
+
+.btn-eliminar:hover .icono-basura {
+  transform: scale(1.2);
+}
+
+/* === UTILITARIOS === */
 .oculto {
   display: none;
 }
 
-/* === BOTÓN CARRITO FLOTANTE === */
-#carrito-btn-flotante {
-  position: absolute;
-  top: 120px;
-  right: 40px;
-  background-color: #111;
-  color: #F9FA48;
-  border: 2px solid #F9FA48;
-  border-radius: 50px;
-  padding: 10px 15px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 0 10px #F9FA48;
-  transition: background 0.3s;
-}
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-#carrito-btn-flotante:hover {
-  background-color: #222;
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #carrito-btn {
+    position: static;
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+
+  #carrito-btn-flotante {
+    top: 100px;
+    right: 20px;
+  }
 }

@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nómade Funcional</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .icono-basura {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      filter: brightness(0) invert(1); /* blanco en fondo negro */
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -38,31 +48,40 @@
       <h3>NUESTROS PLANES</h3>
       <div class="cards-container">
         <div class="card">
-          <h4>Plan Básico</h4>
-          <p class="price">$19.990</p>
+          <h4>Plan Online</h4>
+          <p class="price">$9.990</p>
           <ul class="tags">
-            <li>Acceso limitado</li>
-            <li>1 clase semanal</li>
-          </ul>
-          <button class="btn" onclick="agregarProducto('Plan Básico', 19990)">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <h4>Plan Intermedio</h4>
-          <p class="price">$29.990</p>
-          <ul class="tags">
-            <li>Acceso completo</li>
+            <li>Clases agendadas</li>
             <li>3 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Intermedio', 29990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Online', 9990)">Agregar al carrito</button>
         </div>
         <div class="card">
-          <h4>Plan Avanzado</h4>
-          <p class="price">$49.990</p>
+          <h4>Plan Nomade Principiante</h4>
+          <p class="price">$50.000</p>
           <ul class="tags">
-            <li>Acceso total</li>
-            <li>Clases ilimitadas</li>
+            <li>Acceso sede presencial</li>
+            <li>3 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Avanzado', 49990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Basico', 50000)">Agregar al carrito</button>
+        </div>
+        <div class="card">
+          <h4>Plan Nomade Intermedio</h4>
+          <p class="price">$70.000</p>
+          <ul class="tags">
+            <li>Acceso sede presencial</li>
+            <li>4 clases semanales</li>
+          </ul>
+          <button class="btn" onclick="agregarProducto('Plan Intermedio', 70000)">Agregar al carrito</button>
+        </div>
+        <div class="card">
+          <h4>Plan Nomade Avanzado</h4>
+          <p class="price">$80.000</p>
+          <ul class="tags">
+            <li>Acceso sede presencial</li>
+            <li>5 clases semanales</li>
+          </ul>
+          <button class="btn" onclick="agregarProducto('Plan Avanzado', 80000)">Agregar al carrito</button>
         </div>
       </div>
     </section>
@@ -89,16 +108,27 @@
   <div id="carrito-btn-flotante">🛒 <span id="contador-carrito">0</span></div>
 
   <!-- PANEL DEL CARRITO -->
-    <div id="carrito-panel">
-      <h2>TU CARRITO</h2>
-      <ul id="lista-carrito">
-        <!-- Elementos agregados dinámicamente -->
-      </ul>
-      <div class="carrito-total">TOTAL: $<span id="total-carrito">0</span></div>
-      <button onclick="finalizarCompra()">FINALIZAR COMPRA</button>
-      <button class="cerrar" onclick="toggleCarrito()">CERRAR</button>
-    </div>
+  <div id="carrito-panel">
+    <h2>TU CARRITO</h2>
+    <ul id="lista-carrito">
+      <!-- Elementos agregados dinámicamente -->
+    </ul>
+    <div class="carrito-total">TOTAL: $<span id="total-carrito">0</span></div>
+    <button onclick="finalizarCompra()">FINALIZAR COMPRA</button>
+    <button class="cerrar" onclick="toggleCarrito()">CERRAR</button>
+  </div>
 
   <script src="js/carrito.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const carritoBtn = document.getElementById("carrito-btn-flotante");
+      let offset = 120;
+
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.scrollY;
+        carritoBtn.style.top = (offset + scrollTop) + "px";
+      });
+    });
+  </script>
 </body>
 </html>

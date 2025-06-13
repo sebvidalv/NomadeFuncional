@@ -1,18 +1,15 @@
 let carrito = [];
 
 function agregarProducto(nombre, precio) {
-  // Validar si ya hay un producto en el carrito
   if (carrito.length > 0) {
     alert("Solo puedes agregar un plan al carrito.");
-    return; // No agrega más
+    return;
   }
 
-  const producto = { nombre, precio };
-  carrito.push(producto);
+  carrito.push({ nombre, precio });
   actualizarCarrito();
-  mostrarCarrito(); // Opcional: muestra el carrito al agregar
+  mostrarCarrito(); // Asegúrate de que esta función esté definida si la usas
 }
-
 
 function eliminarProducto(index) {
   carrito.splice(index, 1);
@@ -24,24 +21,40 @@ function actualizarCarrito() {
   const totalSpan = document.getElementById('total-carrito');
   const contador = document.getElementById('contador-carrito');
 
+  if (!lista || !totalSpan || !contador) return;
+
   lista.innerHTML = '';
   let total = 0;
+
   carrito.forEach((producto, index) => {
     const item = document.createElement('li');
+    item.classList.add('item-carrito');
     item.innerHTML = `
-      <span><strong>${producto.nombre}</strong> - $${producto.precio.toLocaleString()}</span>
-      <button onclick="eliminarProducto(${index})" class="btn-eliminar">✖</button>
+      <span><strong>${producto.nombre}</strong> - $${producto.precio.toLocaleString('es-CL')}</span>
+      <button class="btn-eliminar" aria-label="Eliminar" data-index="${index}">🗑️</button>
     `;
     lista.appendChild(item);
     total += producto.precio;
   });
 
-  totalSpan.textContent = total.toLocaleString();
+  totalSpan.textContent = total.toLocaleString('es-CL');
   contador.textContent = carrito.length;
+
+  agregarEventosEliminar();
+}
+
+function agregarEventosEliminar() {
+  document.querySelectorAll('.btn-eliminar').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const index = parseInt(e.currentTarget.getAttribute('data-index'));
+      eliminarProducto(index);
+    });
+  });
 }
 
 function toggleCarrito() {
-  document.getElementById('carrito-panel').classList.toggle('visible');
+  const panel = document.getElementById('carrito-panel');
+  if (panel) panel.classList.toggle('visible');
 }
 
 function finalizarCompra() {
@@ -51,7 +64,6 @@ function finalizarCompra() {
   toggleCarrito();
 }
 
-// Escucha clic en el botón flotante para abrir/cerrar el carrito
 document.addEventListener('DOMContentLoaded', () => {
   const botonFlotante = document.getElementById('carrito-btn-flotante');
   if (botonFlotante) {
