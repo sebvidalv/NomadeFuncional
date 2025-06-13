@@ -1,27 +1,36 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Nómade Funcional</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Gimnasio</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  
   <header>
-    <!-- Logo reemplazando texto -->
-    <div class="logo">
-      <img src="img/logo.jpg" alt="Nómade Funcional">
-    </div>
+   <nav class="navbar">
+  <img src="img/logo.jpg" alt="Logo" class="logo-navbar">
+  <ul class="nav-links">
+    <li><a href="#inicio">INICIO</a></li>
+    <li><a href="#Nosotros">NOSOTROS</a></li>
+    <li><a href="#planes">PLANES</a></li>
+    <li><a href="#comentarios">COMENTARIOS</a></li>
+    <li><a href="#contacto">CONTACTO</a></li>
+  </ul>
+</nav>
 
-    <!-- Menú de navegación -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#">INICIO</a></li>
-        <li><a href="#">QUIENES SOMOS</a></li>
-        <li><a href="#">PLANES</a></li>
-        <li><a href="#">COMENTARIOS</a></li>
-        <li><a href="#">CONTACTO</a></li>
-      </ul>
-    </nav>
   </header>
+
+  <main>
+    <section>
+      <h2>Bienvenido a tu nuevo estilo de vida</h2>
+      <p>Transforma tu cuerpo y mente con nuestros planes.</p>
+      <a href="planes.html" class="btn">Ver planes</a>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

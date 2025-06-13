@@ -1,105 +1,121 @@
+/* =============================
+   RESPONSIVE DESIGN
+   ============================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo-navbar {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  transition: all 0.3s ease;
 }
-
-@font-face {
-  font-family: 'Capture It';
-  src: url('../fonts/capture_it-webfont.woff2') format('woff2'),
-       url('../fonts/capture_it-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.logo img {
-  height: 80px; /* Ajusta según sea necesario */
-  margin: 20px;
-}
-
 
 body {
   background-color: #111;
-  color: #f5f5f5;
+  color: #ff0; /* amarillo */
   font-family: 'Capture It', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #f8e71c; /* Amarillo brillante */
-  font-weight: bold;
-  font-size: 16px;
-  transition: transform 0.2s ease;
-}
-
-.main-nav a:hover {
-  transform: scale(1.1);
-  color: #ffffff;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-
-h1, h2, p, a {
-  font-weight: normal;
   letter-spacing: 1px;
-
+  font-weight: normal;
 }
 
-nav a:hover {
+h2{
+  font-family: 'Capture It', sans-serif;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+.nav-links li a {
+  font-family: 'Capture It', sans-serif;
+  font-weight: normal;
+  font-size: 16px; /* Ajusta según necesidad */
+  color: #ffff00; /* Amarillo fuerte */
+  text-decoration: none;
+  margin: 0 20px;
+  letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
   color: #ffffff;
   text-shadow: 0 0 5px #ffff00;
 }
 
-#planes-container, #carrito-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: #000;
 }
 
-.plan-card, .carrito-item {
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,255,100,0.1);
+.logo-navbar {
+  height: 60px;
 }
 
-.plan-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-.precio {
-  color: #7cff64;
+.nav-links a {
+  text-decoration: none;
+  color: #ff0;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 14px;
 }
-
-.btn {
-  background-color: #7cff64;
-  color: #000;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
