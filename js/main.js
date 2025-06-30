@@ -1,25 +1,26 @@
-console.log("Inicio cargado correctamente.");
+/* === SLIDER DEL STAFF === */
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.querySelector('.slider-wrapper');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
 
-/* js/planes.js */
-fetch("datos/productos.json")
-  .then(res => res.json())
-  .then(productos => {
-    const contenedor = document.getElementById("planes-container");
-    productos.forEach(prod => {
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <h3>${prod.nombre}</h3>
-        <p>${prod.descripcion}</p>
-        <p>Precio: $${prod.precio}</p>
-        <button onclick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
-      `;
-      contenedor.appendChild(div);
-    });
+  let slideIndex = 0;
+
+  function actualizarSlider() {
+    wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+
+
+  prevBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    actualizarSlider();
   });
 
-function agregarAlCarrito(id) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito.push(id);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  alert("Agregado al carrito");
-}
+  nextBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    actualizarSlider();
+  });
+
+  actualizarSlider();
+});

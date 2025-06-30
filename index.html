@@ -19,7 +19,9 @@
 <body>
   <header>
     <nav class="navbar">
-      <img src="img/logo.jpg" alt="Logo" class="logo-navbar" />
+      <a href="index.html">
+        <img src="img/logo.jpg" alt="Logo" class="logo-navbar" />
+      </a>
       <ul class="nav-links">
         <li><a href="#inicio">INICIO</a></li>
         <li><a href="#nosotros">NOSOTROS</a></li>
@@ -37,24 +39,77 @@
       <a href="#planes" class="btn">Ver Planes</a>
     </section>
 
-    <section class="quienes-somos" id="nosotros">
-      <h2>¿QUIÉNES SOMOS?</h2>
-      <div class="equipo">
-        <img src="img/nomade member.png" alt="Nuestro equipo" />
-      </div>
-    </section>
+      <section class="quienes-somos" id="nosotros">
+        <h2>¿QUIÉNES SOMOS?</h2>
+        <div class="slider-container">
+          <button class="slider-btn prev">&#10094;</button>
+         <div class="slider-wrapper">
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-img">
+                <img src="img/nico.jpg" alt="Profesor 1">
+              </div>
+              <div class="slide-info">
+                <h3>Profesor 1</h3>
+                <p>Entrenador de fuerza</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-img">
+                <img src="img/rodrigo.jpg" alt="Profesor 2">
+              </div>
+              <div class="slide-info">
+                <h3>Profesor 2</h3>
+                <p>Especialista en HIIT</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-img">
+                <img src="img/juan.jpg" alt="Profesor 3">
+              </div>
+              <div class="slide-info">
+                <h3>Profesor 3</h3>
+                <p>Coach de movilidad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-img">
+                <img src="img/boss.jpg" alt="Profesor 4">
+              </div>
+              <div class="slide-info">
+                <h3>Profesor 4</h3>
+                <p>Nutrición deportiva</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </section>
+
+
+
 
     <section class="info" id="planes">
       <h3>NUESTROS PLANES</h3>
       <div class="cards-container">
         <div class="card">
-          <h4>Plan Online</h4>
+          <h4>Plan Nomade Online</h4>
           <p class="price">$9.990</p>
           <ul class="tags">
             <li>Clases agendadas</li>
             <li>3 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Online', 9990)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Nomade Online', 9990)">Agregar al carrito</button>
         </div>
         <div class="card">
           <h4>Plan Nomade Principiante</h4>
@@ -63,7 +118,7 @@
             <li>Acceso sede presencial</li>
             <li>3 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Basico', 50000)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Nomade Basico', 50000)">Agregar al carrito</button>
         </div>
         <div class="card">
           <h4>Plan Nomade Intermedio</h4>
@@ -72,7 +127,7 @@
             <li>Acceso sede presencial</li>
             <li>4 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Intermedio', 70000)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Nomade Intermedio', 70000)">Agregar al carrito</button>
         </div>
         <div class="card">
           <h4>Plan Nomade Avanzado</h4>
@@ -81,7 +136,7 @@
             <li>Acceso sede presencial</li>
             <li>5 clases semanales</li>
           </ul>
-          <button class="btn" onclick="agregarProducto('Plan Avanzado', 80000)">Agregar al carrito</button>
+          <button class="btn" onclick="agregarProducto('Plan Nomade Avanzado', 80000)">Agregar al carrito</button>
         </div>
       </div>
     </section>
@@ -131,4 +186,7 @@
     });
   </script>
 </body>
+<script src="js/carrito.js"></script>
+<script src="js/main.js"></script>
+
 </html>

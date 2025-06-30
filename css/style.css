@@ -104,6 +104,122 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
+.quienes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* espacio entre imagen y título */
+}
+
+.quienes-container h2 {
+  text-align: left;
+}
+
+/* === SLIDER DE PROFESORES === */
+.slider-container {
+  position: relative;
+  max-width: 700px; /* aumentamos un poco para dar respiro */
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slider-btn {
+  background: #F9FA48;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+.slider-btn:hover {
+  background: #FFFF7D;
+}
+
+.slide h3 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.slide p {
+  color: #F9FA48;
+  font-size: 1rem;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 400%; /* 4 slides: 100% x 4 */
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* espacio entre imagen e info */
+  flex-wrap: wrap; /* que baje en celular */
+}
+
+.slide-img {
+  flex: 1 1 35%; /* toma menos espacio que el texto */
+  max-width: 220px; /* límite de tamaño */
+}
+
+.slide-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slide-info {
+  flex: 1 1 55%; /* el texto ocupa un poco más */
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.slide-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+}
+
+.slide-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+
 /* === PLANES / INFO === */
 .info {
   padding: 2rem;
