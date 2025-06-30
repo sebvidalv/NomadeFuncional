@@ -132,10 +132,10 @@ h1, h2, h3, h4 {
 
 .slide {
   min-width: 100%;
-  box-sizing: border-box;
-  padding: 1rem;
-  text-align: center;
+  flex-shrink: 0;
 }
+
+
 
 .slide img {
   max-width: 100%;
@@ -186,11 +186,15 @@ h1, h2, h3, h4 {
 
 .slide-content {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1.5rem; /* espacio entre imagen e info */
-  flex-wrap: wrap; /* que baje en celular */
+  align-items: center;
+  width: 100%;         /* ocupar todo el ancho */
+  max-width: 1200px;   /* opcional, para que no se vea demasiado estirado */
+  margin: 0 auto;
+  gap: 2rem;
 }
+
+
 
 .slide-img {
   flex: 1 1 35%; /* toma menos espacio que el texto */
@@ -199,14 +203,17 @@ h1, h2, h3, h4 {
 
 .slide-img img {
   width: 100%;
+  max-width: 200px; /* reduce un poco si se ve muy grande */
   border-radius: 10px;
 }
 
+
 .slide-info {
-  flex: 1 1 55%; /* el texto ocupa un poco más */
+  flex: 1 1 50%;
   text-align: left;
-  padding: 0.5rem;
+  max-width: 300px;
 }
+
 
 .slide-info h3 {
   margin: 0 0 0.5rem 0;
