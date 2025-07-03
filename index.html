@@ -10,8 +10,43 @@
       width: 20px;
       height: 20px;
       vertical-align: middle;
-      filter: brightness(0) invert(1); /* blanco en fondo negro */
+      filter: brightness(0) invert(1);
       cursor: pointer;
+    }
+
+    section {
+      min-height: 100vh; /* que cada sección llene la pantalla */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profesores .slide {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .profesores .slide img {
+      max-width: 200px;
+      border-radius: 8px;
+    }
+
+    .profesores .slide h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: left;
+    }
+
+    /* Carrito flotante más pequeño */
+    #carrito-btn-flotante {
+      padding: 6px 10px;
+      font-size: 16px;
+    }
+
+    #contador-carrito {
+      padding: 1px 6px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -39,65 +74,68 @@
       <a href="#planes" class="btn">Ver Planes</a>
     </section>
 
-      <section class="quienes-somos" id="nosotros">
-        <h2>¿QUIÉNES SOMOS?</h2>
-        <div class="slider-container">
-          <button class="slider-btn prev">&#10094;</button>
-         <div class="slider-wrapper">
-          <div class="slide">
-            <div class="slide-content">
-              <div class="slide-img">
-                <img src="img/nico.jpg" alt="Profesor 1">
-              </div>
-              <div class="slide-info">
-                <h3>Profe Nico</h3>
-                <p>Entrenador del FUAAA</p>
-              </div>
-            </div>
-          </div>
+    <section class="quienes-somos" id="nosotros">
+      <h2>¿QUIÉNES SOMOS?</h2>
+      <p class="marca-descripcion">
+        Nómade Funcional es un espacio donde cuerpo y mente se transforman. Nuestra misión es llevar el entrenamiento a un nivel superior, acompañándote en cada paso.
+      </p>
 
-          <div class="slide">
-            <div class="slide-content">
-              <div class="slide-img">
-                <img src="img/rodrigo.jpg" alt="Profesor 2">
-              </div>
-              <div class="slide-info">
-                <h3>Profe Milico</h3>
-                <p>Especialista en farmacos alemanes</p>
-              </div>
-            </div>
-          </div>
+      <div class="slider-container sede-slider">
+        <button class="slider-btn prev-sede">&#10094;</button>
+        <div class="slider-wrapper sede-wrapper">
+          <div class="slide"><img src="img/somos1.jpg" alt="Sede 1"></div>
+          <div class="slide"><img src="img/somos1.jpg" alt="Sede 2"></div>
+          <div class="slide"><img src="img/somos1.jpg" alt="Sede 3"></div>
+        </div>
+        <button class="slider-btn next-sede">&#10095;</button>
+      </div>
+    </section>
 
-          <div class="slide">
-            <div class="slide-content">
-              <div class="slide-img">
-                <img src="img/juan.jpg" alt="Profesor 3">
-              </div>
-              <div class="slide-info">
-                <h3>Profe Juan</h3>
-                <p>Coach de movilidad en la cama</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="slide-content">
-              <div class="slide-img">
-                <img src="img/boss.jpg" alt="Profesor 4">
-              </div>
-              <div class="slide-info">
-                <h3>Chascon</h3>
-                <p>THE BIG BOSS</p>
-              </div>
+      <section class="profesores" id="profesores">
+  <h2>NUESTROS PROFESORES</h2>
+  <div class="slider-container">
+    <button class="slider-btn prev-prof">&#10094;</button>
+    <div class="slider-wrapper prof-wrapper">
+        <div class="slide">
+          <div class="slide-content">
+            <img src="img/nico.jpg" alt="Profesor Nico">
+            <div class="info-profesor">
+              <h3>Profe Nico</h3>
+              <p>Especialista en entrenamiento funcional y movilidad.</p>
             </div>
           </div>
         </div>
-          <button class="slider-btn next">&#10095;</button>
+      <div class="slide">
+        <div class="slide-content">
+          <img src="img/rodrigo.jpg" alt="Profesor Milico">
+          <div class="info-profesor">
+            <h3>Profe Milico</h3>
+            <p>Fuerza, hipertrofia y acondicionamiento físico.</p>
+          </div>
         </div>
-      </section>
-
-
-
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <img src="img/juan.jpg" alt="Profesor Juan">
+          <div class="info-profesor">
+            <h3>Profe Juan</h3>
+            <p>Experto en calistenia y control corporal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <img src="img/boss.jpg" alt="El Boss">
+          <div class="info-profesor">
+            <h3>Chascon</h3>
+            <p>Fundador y coach integral en Nómade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn next-prof">&#10095;</button>
+  </div>
+</section>
 
     <section class="info" id="planes">
       <h3>NUESTROS PLANES</h3>
@@ -141,11 +179,6 @@
       </div>
     </section>
 
-    <section class="comentarios" id="comentarios">
-      <h3>Testimonios</h3>
-      <blockquote>"Ha cambiado mi vida totalmente!"</blockquote>
-    </section>
-
     <section class="contacto" id="contacto">
       <h3>Contacto</h3>
       <p>Escríbenos a <a href="mailto:info@nomadefuncional.com">info@nomadefuncional.com</a></p>
@@ -159,21 +192,18 @@
     <p>&copy; 2025 Nómade Funcional</p>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DEL CARRITO -->
   <div id="carrito-btn-flotante">🛒 <span id="contador-carrito">0</span></div>
 
-  <!-- PANEL DEL CARRITO -->
   <div id="carrito-panel">
     <h2>TU CARRITO</h2>
-    <ul id="lista-carrito">
-      <!-- Elementos agregados dinámicamente -->
-    </ul>
+    <ul id="lista-carrito"></ul>
     <div class="carrito-total">TOTAL: $<span id="total-carrito">0</span></div>
     <button onclick="finalizarCompra()">FINALIZAR COMPRA</button>
     <button class="cerrar" onclick="toggleCarrito()">CERRAR</button>
   </div>
 
   <script src="js/carrito.js"></script>
+  <script src="js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const carritoBtn = document.getElementById("carrito-btn-flotante");
@@ -186,7 +216,4 @@
     });
   </script>
 </body>
-<script src="js/carrito.js"></script>
-<script src="js/main.js"></script>
-
 </html>
